@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter} from '@angular/core';
 import {Product} from './product.model';
 
 @Component({
@@ -6,14 +6,32 @@ import {Product} from './product.model';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  product: Product;
+  products: Product[];
 
   constructor() {
-    this.product = new Product(
-      'NICEHAT',
-      'a nice black hat',
-      '/assets/images/products/black-hat.png',
-      ['Women', 'Accessories', 'Hats'],
-      29.99);
+    this.products = [
+      new Product(
+        'MYSHOES',
+        'Black Running Shoes',
+        '/assets/images/products/black-shoes.png',
+        ['Women', 'Shoes', 'Heels'],
+        109.99),
+      new Product(
+        'NEATOSWEATER',
+        'Blue Sweater',
+        '/assets/images/products/blue-sweater.png',
+        ['Women', 'Apparel', 'Casual'],
+        238.99),
+      new Product(
+        'NICEHAT',
+        'A Nice Black Hat',
+        '/assets/images/products/black-hat.png',
+        ['Men', 'Accessories', 'Cowboy Hats'],
+        29.99)
+    ];
+  }
+
+  productWasSelected(product: Product): void {
+    console.log('Product clicked: ', product);
   }
 }
