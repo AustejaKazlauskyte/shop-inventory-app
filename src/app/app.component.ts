@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Product} from './product.model';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'shop-inventory-app-root',
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'shop-inventory-app';
+  product: Product;
+
+  constructor() {
+    this.product = new Product(
+      'NICEHAT',
+      'a nice black hat',
+      '/assets/images/products/black-hat.png',
+      ['Women', 'Accessories', 'Hats'],
+      29.99);
+  }
 }
