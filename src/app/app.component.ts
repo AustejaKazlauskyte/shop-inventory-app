@@ -1,6 +1,13 @@
-import {Component, EventEmitter} from '@angular/core';
+import {
+  Component,
+  EventEmitter
+} from '@angular/core';
+
 import {Product} from './product.model';
 
+/**
+ * @InventoryApp: the top-level component for our application
+ */
 @Component({
   selector: 'inventory-app-root',
   templateUrl: './app.component.html'
@@ -11,22 +18,22 @@ export class AppComponent {
   constructor() {
     this.products = [
       new Product(
-        'MYSHOES',
-        'Black Running Shoes',
-        '/assets/images/products/black-shoes.png',
-        ['Women', 'Shoes', 'Heels'],
-        109.99),
+        'AWSMSHS',
+        'Black Heels',
+        '/assets/images/products/black-heels.png',
+        ['Women', 'Shoes', 'Friday night'],
+        1009.99),
       new Product(
-        'NEATOSWEATER',
+        'NEATOJACKET',
         'Blue Sweater',
         '/assets/images/products/blue-sweater.png',
-        ['Women', 'Apparel', 'Casual'],
+        ['Women', 'Apparel', 'Jackets & Vests'],
         238.99),
       new Product(
         'NICEHAT',
         'A Nice Black Hat',
         '/assets/images/products/black-hat.png',
-        ['Men', 'Accessories', 'Cowboy Hats'],
+        ['Men', 'Accessories', 'Hats'],
         29.99)
     ];
   }
